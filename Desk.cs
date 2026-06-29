@@ -1,24 +1,118 @@
 namespace MegaDeskDemo
 {
-    public enum DesktopMaterial
-    {
-        Laminate,
-        Oak,
-        Rosewood,
-        Veneer,
-        Pine
-    }
-
     public class Desk
     {
-        public int Width { get; set; }
+        public enum DeskMaterial
+        {
+            Pine,
+            Laminate,
+            Veneer,
+            Oak,
+            Rosewood
+        }
 
-        public int Depth { get; set; }
+        private int _width;
 
-        public int Drawers { get; set; }
+        public int Width
+        {
+            get
+            {
+                return _width;
+            }
+            set
+            {
+                if (value <= 96 && value >= 24)
+                {
+                    _width = value;
+                }
+                else
+                {
+                    throw new Exception("Invalid width value");
+                }
+            }
+        }
 
-        public DesktopMaterial SurfaceMaterial { get; set; }
+        private int _depth;
 
-        public int SurfaceArea => Width * Depth;
+        public int Depth
+        {
+            get
+            {
+                return _depth;
+            }
+            set
+            {
+                if (value <= 48 && value >= 12)
+                {
+                    _depth = value;
+                }
+                else
+                {
+                    throw new Exception("Invalid depth value.");
+                }
+            }
+        }
+
+        private int _drawerNumber;
+
+        public int DrawerNumber
+        {
+            get
+            {
+                return _drawerNumber;
+            }
+            set
+            {
+                if (value <= 7 && value >= 0)
+                {
+                    _drawerNumber = value;
+                }
+                else
+                {
+                    throw new Exception("Invalid Drawer Amount.");
+                }
+            }
+        }
+
+        private int _shippingDays;
+
+        public int ShippingDays
+        {
+            get
+            {
+                return _shippingDays;
+            }
+            set
+            {
+                if (value == 3 || value == 5 || value == 7)
+                {
+                    _shippingDays = value;
+                }
+                else
+                {
+                    throw new Exception("Invalid Shipping Amount.");
+                }
+            }
+        }
+
+        public string Material { get; set; } = string.Empty;
+
+        public Desk()
+        {
+        }
+
+        public Desk(int width, int depth, int drawerNumber, string material, int shippingDays)
+        {
+            Width = width;
+            Depth = depth;
+            DrawerNumber = drawerNumber;
+            Material = material;
+            ShippingDays = shippingDays;
+        }
+
+        public int getSurfaceArea()
+        {
+            return Width * Depth;
+        }
     }
 }

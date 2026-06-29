@@ -5,8 +5,6 @@ namespace MegaDeskDemo
         public MainMenu()
         {
             InitializeComponent();
-            string imagePath = Path.Combine(Application.StartupPath, "Assets", "desk.png");
-            deskPictureBox.Image = Image.FromFile(imagePath);
         }
 
         private void AddQuoteBtn_Click(object sender, EventArgs e)

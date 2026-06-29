@@ -2,14 +2,19 @@ namespace MegaDeskDemo
 {
     public class DeskQuote
     {
-        public string CustomerName { get; set; } = string.Empty;
+        public string customerName { get; set; }
 
-        public DateTime QuoteDate { get; set; }
+        public string orderDate { get; set; }
 
-        public Desk Desk { get; set; } = new Desk();
+        public Desk desk { get; set; }
 
-        public string DeliveryTime { get; set; } = string.Empty;
+        public double price { get; set; }
 
-        public int TotalSize => Desk.SurfaceArea;
+        public DeskQuote()
+        {
+            customerName = string.Empty;
+            orderDate = string.Empty;
+            desk = new Desk();
+        }
     }
 }

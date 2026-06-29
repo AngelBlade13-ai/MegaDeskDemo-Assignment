@@ -20,13 +20,26 @@ namespace MegaDeskDemo
         {
             titleLabel = new Label();
             closeBtn = new Button();
+            materialLabel = new Label();
+            materialComboBox = new ComboBox();
+            searchGrid = new DataGridView();
+            customerColumn = new DataGridViewTextBoxColumn();
+            dateColumn = new DataGridViewTextBoxColumn();
+            widthColumn = new DataGridViewTextBoxColumn();
+            depthColumn = new DataGridViewTextBoxColumn();
+            drawersColumn = new DataGridViewTextBoxColumn();
+            sizeColumn = new DataGridViewTextBoxColumn();
+            materialColumn = new DataGridViewTextBoxColumn();
+            shippingColumn = new DataGridViewTextBoxColumn();
+            emptyLabel = new Label();
+            ((System.ComponentModel.ISupportInitialize)searchGrid).BeginInit();
             SuspendLayout();
             // 
             // titleLabel
             // 
             titleLabel.AutoSize = true;
             titleLabel.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
-            titleLabel.Location = new Point(24, 24);
+            titleLabel.Location = new Point(16, 16);
             titleLabel.Name = "titleLabel";
             titleLabel.Size = new Size(133, 25);
             titleLabel.TabIndex = 0;
@@ -34,7 +47,7 @@ namespace MegaDeskDemo
             // 
             // closeBtn
             // 
-            closeBtn.Location = new Point(24, 76);
+            closeBtn.Location = new Point(650, 407);
             closeBtn.Name = "closeBtn";
             closeBtn.Size = new Size(95, 32);
             closeBtn.TabIndex = 1;
@@ -42,15 +55,112 @@ namespace MegaDeskDemo
             closeBtn.UseVisualStyleBackColor = true;
             closeBtn.Click += CloseBtn_Click;
             // 
+            // materialLabel
+            // 
+            materialLabel.AutoSize = true;
+            materialLabel.Location = new Point(16, 60);
+            materialLabel.Name = "materialLabel";
+            materialLabel.Size = new Size(76, 15);
+            materialLabel.TabIndex = 2;
+            materialLabel.Text = "Material Type";
+            // 
+            // materialComboBox
+            // 
+            materialComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            materialComboBox.FormattingEnabled = true;
+            materialComboBox.Items.AddRange(new object[] { "All", "Pine", "Laminate", "Veneer", "Oak", "Rosewood" });
+            materialComboBox.Location = new Point(111, 57);
+            materialComboBox.Name = "materialComboBox";
+            materialComboBox.Size = new Size(213, 23);
+            materialComboBox.TabIndex = 3;
+            materialComboBox.SelectedIndexChanged += MaterialComboBox_SelectedIndexChanged;
+            // 
+            // searchGrid
+            // 
+            searchGrid.AllowUserToAddRows = false;
+            searchGrid.AllowUserToDeleteRows = false;
+            searchGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            searchGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            searchGrid.Columns.AddRange(new DataGridViewColumn[] { customerColumn, dateColumn, widthColumn, depthColumn, drawersColumn, sizeColumn, materialColumn, shippingColumn });
+            searchGrid.Location = new Point(16, 99);
+            searchGrid.Name = "searchGrid";
+            searchGrid.ReadOnly = true;
+            searchGrid.RowHeadersVisible = false;
+            searchGrid.Size = new Size(729, 290);
+            searchGrid.TabIndex = 4;
+            // 
+            // customerColumn
+            // 
+            customerColumn.HeaderText = "Customer";
+            customerColumn.Name = "customerColumn";
+            customerColumn.ReadOnly = true;
+            // 
+            // dateColumn
+            // 
+            dateColumn.HeaderText = "Date";
+            dateColumn.Name = "dateColumn";
+            dateColumn.ReadOnly = true;
+            // 
+            // widthColumn
+            // 
+            widthColumn.HeaderText = "Width";
+            widthColumn.Name = "widthColumn";
+            widthColumn.ReadOnly = true;
+            // 
+            // depthColumn
+            // 
+            depthColumn.HeaderText = "Depth";
+            depthColumn.Name = "depthColumn";
+            depthColumn.ReadOnly = true;
+            // 
+            // drawersColumn
+            // 
+            drawersColumn.HeaderText = "Drawers";
+            drawersColumn.Name = "drawersColumn";
+            drawersColumn.ReadOnly = true;
+            // 
+            // sizeColumn
+            // 
+            sizeColumn.HeaderText = "Total Size in^2";
+            sizeColumn.Name = "sizeColumn";
+            sizeColumn.ReadOnly = true;
+            // 
+            // materialColumn
+            // 
+            materialColumn.HeaderText = "Material";
+            materialColumn.Name = "materialColumn";
+            materialColumn.ReadOnly = true;
+            // 
+            // shippingColumn
+            // 
+            shippingColumn.HeaderText = "Shipping";
+            shippingColumn.Name = "shippingColumn";
+            shippingColumn.ReadOnly = true;
+            // 
+            // emptyLabel
+            // 
+            emptyLabel.AutoSize = true;
+            emptyLabel.Location = new Point(16, 407);
+            emptyLabel.Name = "emptyLabel";
+            emptyLabel.Size = new Size(228, 15);
+            emptyLabel.TabIndex = 5;
+            emptyLabel.Text = "No quotes match the selected material.";
+            // 
             // SearchQuote
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(300, 137);
+            ClientSize = new Size(761, 457);
+            Controls.Add(emptyLabel);
+            Controls.Add(searchGrid);
+            Controls.Add(materialComboBox);
+            Controls.Add(materialLabel);
             Controls.Add(closeBtn);
             Controls.Add(titleLabel);
             Name = "SearchQuote";
             Text = "Search Quote";
+            Load += SearchQuote_Load;
+            ((System.ComponentModel.ISupportInitialize)searchGrid).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -59,5 +169,17 @@ namespace MegaDeskDemo
 
         private Label titleLabel;
         private Button closeBtn;
+        private Label materialLabel;
+        private ComboBox materialComboBox;
+        private DataGridView searchGrid;
+        private DataGridViewTextBoxColumn customerColumn;
+        private DataGridViewTextBoxColumn dateColumn;
+        private DataGridViewTextBoxColumn widthColumn;
+        private DataGridViewTextBoxColumn depthColumn;
+        private DataGridViewTextBoxColumn drawersColumn;
+        private DataGridViewTextBoxColumn sizeColumn;
+        private DataGridViewTextBoxColumn materialColumn;
+        private DataGridViewTextBoxColumn shippingColumn;
+        private Label emptyLabel;
     }
 }

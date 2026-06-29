@@ -18,220 +18,241 @@ namespace MegaDeskDemo
 
         private void InitializeComponent()
         {
-            customerNameLabel = new Label();
-            customerNameTextBox = new TextBox();
-            quoteDateLabel = new Label();
-            quoteDatePicker = new DateTimePicker();
+            components = new System.ComponentModel.Container();
+            titleLabel = new Label();
+            todayLabel = new Label();
+            DateLabel = new Label();
+            nameLabel = new Label();
+            NameBox = new TextBox();
             widthLabel = new Label();
-            widthNumericUpDown = new NumericUpDown();
+            WidthBox = new TextBox();
             depthLabel = new Label();
-            depthNumericUpDown = new NumericUpDown();
-            drawersLabel = new Label();
-            drawersNumericUpDown = new NumericUpDown();
+            DepthBox = new TextBox();
+            drawerLabel = new Label();
+            DrawerInput = new ComboBox();
             materialLabel = new Label();
-            materialComboBox = new ComboBox();
-            deliveryLabel = new Label();
-            deliveryComboBox = new ComboBox();
-            submitQuoteBtn = new Button();
-            cancelBtn = new Button();
-            ((System.ComponentModel.ISupportInitialize)widthNumericUpDown).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)depthNumericUpDown).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)drawersNumericUpDown).BeginInit();
+            MaterialComboBox = new ComboBox();
+            shippingLabel = new Label();
+            ShippingComboBox = new ComboBox();
+            BackBtn = new Button();
+            button2 = new Button();
+            WidthErrorProvider = new ErrorProvider(components);
+            ((System.ComponentModel.ISupportInitialize)WidthErrorProvider).BeginInit();
             SuspendLayout();
             // 
-            // customerNameLabel
+            // titleLabel
             // 
-            customerNameLabel.AutoSize = true;
-            customerNameLabel.Location = new Point(24, 24);
-            customerNameLabel.Name = "customerNameLabel";
-            customerNameLabel.Size = new Size(94, 15);
-            customerNameLabel.TabIndex = 0;
-            customerNameLabel.Text = "Customer Name";
+            titleLabel.AutoSize = true;
+            titleLabel.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            titleLabel.Location = new Point(24, 22);
+            titleLabel.Name = "titleLabel";
+            titleLabel.Size = new Size(105, 25);
+            titleLabel.TabIndex = 0;
+            titleLabel.Text = "Add Quote";
             // 
-            // customerNameTextBox
+            // todayLabel
             // 
-            customerNameTextBox.Location = new Point(158, 21);
-            customerNameTextBox.Name = "customerNameTextBox";
-            customerNameTextBox.Size = new Size(200, 23);
-            customerNameTextBox.TabIndex = 1;
+            todayLabel.AutoSize = true;
+            todayLabel.Location = new Point(24, 67);
+            todayLabel.Name = "todayLabel";
+            todayLabel.Size = new Size(74, 15);
+            todayLabel.TabIndex = 1;
+            todayLabel.Text = "Today's Date";
             // 
-            // quoteDateLabel
+            // DateLabel
             // 
-            quoteDateLabel.AutoSize = true;
-            quoteDateLabel.Location = new Point(24, 62);
-            quoteDateLabel.Name = "quoteDateLabel";
-            quoteDateLabel.Size = new Size(65, 15);
-            quoteDateLabel.TabIndex = 2;
-            quoteDateLabel.Text = "Quote Date";
+            DateLabel.AutoSize = true;
+            DateLabel.Location = new Point(183, 67);
+            DateLabel.Name = "DateLabel";
+            DateLabel.Size = new Size(12, 15);
+            DateLabel.TabIndex = 2;
+            DateLabel.Text = "-";
             // 
-            // quoteDatePicker
+            // nameLabel
             // 
-            quoteDatePicker.Format = DateTimePickerFormat.Short;
-            quoteDatePicker.Location = new Point(158, 56);
-            quoteDatePicker.Name = "quoteDatePicker";
-            quoteDatePicker.Size = new Size(200, 23);
-            quoteDatePicker.TabIndex = 3;
+            nameLabel.AutoSize = true;
+            nameLabel.Location = new Point(24, 109);
+            nameLabel.Name = "nameLabel";
+            nameLabel.Size = new Size(94, 15);
+            nameLabel.TabIndex = 3;
+            nameLabel.Text = "Customer Name";
+            // 
+            // NameBox
+            // 
+            NameBox.Location = new Point(183, 106);
+            NameBox.Name = "NameBox";
+            NameBox.Size = new Size(213, 23);
+            NameBox.TabIndex = 4;
+            NameBox.Validating += NameBox_Validating;
             // 
             // widthLabel
             // 
             widthLabel.AutoSize = true;
-            widthLabel.Location = new Point(24, 101);
+            widthLabel.Location = new Point(24, 150);
             widthLabel.Name = "widthLabel";
             widthLabel.Size = new Size(39, 15);
-            widthLabel.TabIndex = 4;
+            widthLabel.TabIndex = 5;
             widthLabel.Text = "Width";
             // 
-            // widthNumericUpDown
+            // WidthBox
             // 
-            widthNumericUpDown.Location = new Point(158, 99);
-            widthNumericUpDown.Maximum = new decimal(new int[] { 96, 0, 0, 0 });
-            widthNumericUpDown.Minimum = new decimal(new int[] { 24, 0, 0, 0 });
-            widthNumericUpDown.Name = "widthNumericUpDown";
-            widthNumericUpDown.Size = new Size(200, 23);
-            widthNumericUpDown.TabIndex = 5;
-            widthNumericUpDown.Value = new decimal(new int[] { 24, 0, 0, 0 });
+            WidthBox.Location = new Point(183, 147);
+            WidthBox.Name = "WidthBox";
+            WidthBox.Size = new Size(213, 23);
+            WidthBox.TabIndex = 6;
+            WidthBox.Validating += WidthBox_Validating;
             // 
             // depthLabel
             // 
             depthLabel.AutoSize = true;
-            depthLabel.Location = new Point(24, 139);
+            depthLabel.Location = new Point(24, 191);
             depthLabel.Name = "depthLabel";
             depthLabel.Size = new Size(39, 15);
-            depthLabel.TabIndex = 6;
+            depthLabel.TabIndex = 7;
             depthLabel.Text = "Depth";
             // 
-            // depthNumericUpDown
+            // DepthBox
             // 
-            depthNumericUpDown.Location = new Point(158, 137);
-            depthNumericUpDown.Maximum = new decimal(new int[] { 48, 0, 0, 0 });
-            depthNumericUpDown.Minimum = new decimal(new int[] { 12, 0, 0, 0 });
-            depthNumericUpDown.Name = "depthNumericUpDown";
-            depthNumericUpDown.Size = new Size(200, 23);
-            depthNumericUpDown.TabIndex = 7;
-            depthNumericUpDown.Value = new decimal(new int[] { 12, 0, 0, 0 });
+            DepthBox.Location = new Point(183, 188);
+            DepthBox.Name = "DepthBox";
+            DepthBox.Size = new Size(213, 23);
+            DepthBox.TabIndex = 8;
+            DepthBox.Validating += DepthBox_Validating;
             // 
-            // drawersLabel
+            // drawerLabel
             // 
-            drawersLabel.AutoSize = true;
-            drawersLabel.Location = new Point(24, 177);
-            drawersLabel.Name = "drawersLabel";
-            drawersLabel.Size = new Size(48, 15);
-            drawersLabel.TabIndex = 8;
-            drawersLabel.Text = "Drawers";
+            drawerLabel.AutoSize = true;
+            drawerLabel.Location = new Point(24, 232);
+            drawerLabel.Name = "drawerLabel";
+            drawerLabel.Size = new Size(48, 15);
+            drawerLabel.TabIndex = 9;
+            drawerLabel.Text = "Drawers";
             // 
-            // drawersNumericUpDown
+            // DrawerInput
             // 
-            drawersNumericUpDown.Location = new Point(158, 175);
-            drawersNumericUpDown.Maximum = new decimal(new int[] { 7, 0, 0, 0 });
-            drawersNumericUpDown.Name = "drawersNumericUpDown";
-            drawersNumericUpDown.Size = new Size(200, 23);
-            drawersNumericUpDown.TabIndex = 9;
+            DrawerInput.DropDownStyle = ComboBoxStyle.DropDownList;
+            DrawerInput.FormattingEnabled = true;
+            DrawerInput.Items.AddRange(new object[] { "0", "1", "2", "3", "4", "5", "6", "7" });
+            DrawerInput.Location = new Point(183, 229);
+            DrawerInput.Name = "DrawerInput";
+            DrawerInput.Size = new Size(213, 23);
+            DrawerInput.TabIndex = 10;
+            DrawerInput.Validating += DrawerInput_Validating;
             // 
             // materialLabel
             // 
             materialLabel.AutoSize = true;
-            materialLabel.Location = new Point(24, 215);
+            materialLabel.Location = new Point(24, 273);
             materialLabel.Name = "materialLabel";
             materialLabel.Size = new Size(76, 15);
-            materialLabel.TabIndex = 10;
+            materialLabel.TabIndex = 11;
             materialLabel.Text = "Material Type";
             // 
-            // materialComboBox
+            // MaterialComboBox
             // 
-            materialComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
-            materialComboBox.FormattingEnabled = true;
-            materialComboBox.Items.AddRange(new object[] { "Laminate", "Oak", "Rosewood", "Veneer", "Pine" });
-            materialComboBox.Location = new Point(158, 212);
-            materialComboBox.Name = "materialComboBox";
-            materialComboBox.Size = new Size(200, 23);
-            materialComboBox.TabIndex = 11;
+            MaterialComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            MaterialComboBox.FormattingEnabled = true;
+            MaterialComboBox.Items.AddRange(new object[] { "Pine", "Laminate", "Veneer", "Oak", "Rosewood" });
+            MaterialComboBox.Location = new Point(183, 270);
+            MaterialComboBox.Name = "MaterialComboBox";
+            MaterialComboBox.Size = new Size(213, 23);
+            MaterialComboBox.TabIndex = 12;
+            MaterialComboBox.Validating += MaterialComboBox_Validating;
             // 
-            // deliveryLabel
+            // shippingLabel
             // 
-            deliveryLabel.AutoSize = true;
-            deliveryLabel.Location = new Point(24, 253);
-            deliveryLabel.Name = "deliveryLabel";
-            deliveryLabel.Size = new Size(109, 15);
-            deliveryLabel.TabIndex = 12;
-            deliveryLabel.Text = "Order Delivery Time";
+            shippingLabel.AutoSize = true;
+            shippingLabel.Location = new Point(24, 314);
+            shippingLabel.Name = "shippingLabel";
+            shippingLabel.Size = new Size(139, 15);
+            shippingLabel.TabIndex = 13;
+            shippingLabel.Text = "Order Delivery Time";
             // 
-            // deliveryComboBox
+            // ShippingComboBox
             // 
-            deliveryComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
-            deliveryComboBox.FormattingEnabled = true;
-            deliveryComboBox.Items.AddRange(new object[] { "3 Days", "5 Days", "7 Days", "14 Days" });
-            deliveryComboBox.Location = new Point(158, 250);
-            deliveryComboBox.Name = "deliveryComboBox";
-            deliveryComboBox.Size = new Size(200, 23);
-            deliveryComboBox.TabIndex = 13;
+            ShippingComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            ShippingComboBox.FormattingEnabled = true;
+            ShippingComboBox.Items.AddRange(new object[] { "3", "5", "7" });
+            ShippingComboBox.Location = new Point(183, 311);
+            ShippingComboBox.Name = "ShippingComboBox";
+            ShippingComboBox.Size = new Size(213, 23);
+            ShippingComboBox.TabIndex = 14;
+            ShippingComboBox.Validating += ShippingComboBox_Validating;
             // 
-            // submitQuoteBtn
+            // BackBtn
             // 
-            submitQuoteBtn.Location = new Point(158, 297);
-            submitQuoteBtn.Name = "submitQuoteBtn";
-            submitQuoteBtn.Size = new Size(95, 32);
-            submitQuoteBtn.TabIndex = 14;
-            submitQuoteBtn.Text = "Submit";
-            submitQuoteBtn.UseVisualStyleBackColor = true;
-            submitQuoteBtn.Click += SubmitQuoteBtn_Click;
+            BackBtn.CausesValidation = false;
+            BackBtn.Location = new Point(183, 384);
+            BackBtn.Name = "BackBtn";
+            BackBtn.Size = new Size(95, 32);
+            BackBtn.TabIndex = 15;
+            BackBtn.Text = "Back";
+            BackBtn.UseVisualStyleBackColor = true;
+            BackBtn.Click += BackBtn_Click;
             // 
-            // cancelBtn
+            // button2
             // 
-            cancelBtn.Location = new Point(263, 297);
-            cancelBtn.Name = "cancelBtn";
-            cancelBtn.Size = new Size(95, 32);
-            cancelBtn.TabIndex = 15;
-            cancelBtn.Text = "Cancel";
-            cancelBtn.UseVisualStyleBackColor = true;
-            cancelBtn.Click += CancelBtn_Click;
+            button2.Location = new Point(301, 384);
+            button2.Name = "button2";
+            button2.Size = new Size(95, 32);
+            button2.TabIndex = 16;
+            button2.Text = "Submit";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
+            // WidthErrorProvider
+            // 
+            WidthErrorProvider.ContainerControl = this;
             // 
             // AddQuote
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(386, 356);
-            Controls.Add(cancelBtn);
-            Controls.Add(submitQuoteBtn);
-            Controls.Add(deliveryComboBox);
-            Controls.Add(deliveryLabel);
-            Controls.Add(materialComboBox);
+            ClientSize = new Size(461, 481);
+            Controls.Add(button2);
+            Controls.Add(BackBtn);
+            Controls.Add(ShippingComboBox);
+            Controls.Add(shippingLabel);
+            Controls.Add(MaterialComboBox);
             Controls.Add(materialLabel);
-            Controls.Add(drawersNumericUpDown);
-            Controls.Add(drawersLabel);
-            Controls.Add(depthNumericUpDown);
+            Controls.Add(DrawerInput);
+            Controls.Add(drawerLabel);
+            Controls.Add(DepthBox);
             Controls.Add(depthLabel);
-            Controls.Add(widthNumericUpDown);
+            Controls.Add(WidthBox);
             Controls.Add(widthLabel);
-            Controls.Add(quoteDatePicker);
-            Controls.Add(quoteDateLabel);
-            Controls.Add(customerNameTextBox);
-            Controls.Add(customerNameLabel);
+            Controls.Add(NameBox);
+            Controls.Add(nameLabel);
+            Controls.Add(DateLabel);
+            Controls.Add(todayLabel);
+            Controls.Add(titleLabel);
             Name = "AddQuote";
             Text = "Add Quote";
-            ((System.ComponentModel.ISupportInitialize)widthNumericUpDown).EndInit();
-            ((System.ComponentModel.ISupportInitialize)depthNumericUpDown).EndInit();
-            ((System.ComponentModel.ISupportInitialize)drawersNumericUpDown).EndInit();
+            Load += AddQuote_Load;
+            ((System.ComponentModel.ISupportInitialize)WidthErrorProvider).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Label customerNameLabel;
-        private TextBox customerNameTextBox;
-        private Label quoteDateLabel;
-        private DateTimePicker quoteDatePicker;
+        private Label titleLabel;
+        private Label todayLabel;
+        private Label DateLabel;
+        private Label nameLabel;
+        private TextBox NameBox;
         private Label widthLabel;
-        private NumericUpDown widthNumericUpDown;
+        private TextBox WidthBox;
         private Label depthLabel;
-        private NumericUpDown depthNumericUpDown;
-        private Label drawersLabel;
-        private NumericUpDown drawersNumericUpDown;
+        private TextBox DepthBox;
+        private Label drawerLabel;
+        private ComboBox DrawerInput;
         private Label materialLabel;
-        private ComboBox materialComboBox;
-        private Label deliveryLabel;
-        private ComboBox deliveryComboBox;
-        private Button submitQuoteBtn;
-        private Button cancelBtn;
+        private ComboBox MaterialComboBox;
+        private Label shippingLabel;
+        private ComboBox ShippingComboBox;
+        private Button BackBtn;
+        private Button button2;
+        private ErrorProvider WidthErrorProvider;
     }
 }
