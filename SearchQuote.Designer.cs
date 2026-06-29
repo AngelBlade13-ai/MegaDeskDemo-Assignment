@@ -1,0 +1,63 @@
+namespace MegaDeskDemo
+{
+    partial class SearchQuote
+    {
+        private System.ComponentModel.IContainer components = null;
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        private void InitializeComponent()
+        {
+            titleLabel = new Label();
+            closeBtn = new Button();
+            SuspendLayout();
+            // 
+            // titleLabel
+            // 
+            titleLabel.AutoSize = true;
+            titleLabel.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            titleLabel.Location = new Point(24, 24);
+            titleLabel.Name = "titleLabel";
+            titleLabel.Size = new Size(133, 25);
+            titleLabel.TabIndex = 0;
+            titleLabel.Text = "Search Quote";
+            // 
+            // closeBtn
+            // 
+            closeBtn.Location = new Point(24, 76);
+            closeBtn.Name = "closeBtn";
+            closeBtn.Size = new Size(95, 32);
+            closeBtn.TabIndex = 1;
+            closeBtn.Text = "Close";
+            closeBtn.UseVisualStyleBackColor = true;
+            closeBtn.Click += CloseBtn_Click;
+            // 
+            // SearchQuote
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(300, 137);
+            Controls.Add(closeBtn);
+            Controls.Add(titleLabel);
+            Name = "SearchQuote";
+            Text = "Search Quote";
+            ResumeLayout(false);
+            PerformLayout();
+        }
+
+        #endregion
+
+        private Label titleLabel;
+        private Button closeBtn;
+    }
+}
